@@ -6,3 +6,11 @@ C:\Projects\Visual Studio\Vasketider\DataMigrationHelper\bin\Debug\Lib.pdb
 C:\Projects\Visual Studio\Vasketider\DataMigrationHelper\obj\Debug\DataMigrationHelper.csprojResolveAssemblyReference.cache
 C:\Projects\Visual Studio\Vasketider\DataMigrationHelper\obj\Debug\DataMigrationHelper.exe
 C:\Projects\Visual Studio\Vasketider\DataMigrationHelper\obj\Debug\DataMigrationHelper.pdb
+C:\Projects\Vasketid\DataMigrationHelper\bin\Debug\DataMigrationHelper.exe.config
+C:\Projects\Vasketid\DataMigrationHelper\bin\Debug\DataMigrationHelper.exe
+C:\Projects\Vasketid\DataMigrationHelper\bin\Debug\DataMigrationHelper.pdb
+C:\Projects\Vasketid\DataMigrationHelper\bin\Debug\Lib.dll
+C:\Projects\Vasketid\DataMigrationHelper\bin\Debug\Lib.pdb
+C:\Projects\Vasketid\DataMigrationHelper\obj\Debug\DataMigrationHelper.csprojResolveAssemblyReference.cache
+C:\Projects\Vasketid\DataMigrationHelper\obj\Debug\DataMigrationHelper.exe
+C:\Projects\Vasketid\DataMigrationHelper\obj\Debug\DataMigrationHelper.pdb

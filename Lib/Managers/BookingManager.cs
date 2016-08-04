@@ -41,21 +41,21 @@ namespace Lib.Managers
         public List<Booking> GetBookingsByDate(DateTime date)
         {
             DateTime newDate = new DateTime(date.Year, date.Month, date.Day);
-            string queryString = @"SELECT Id, Time, UserId, Note FROM Bookings WHERE Time > @lower AND Time < @upper AND Deleted = 0";
+            string queryString = @"SELECT Id, Time, UserId, Note FROM Booking WHERE Time > @lower AND Time < @upper AND Deleted = 0";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("lower", newDate);
             parameters.Add("upper", newDate.AddDays(1));
 
-            return GetBookings(queryString, parameters);
+            return GetBooking(queryString, parameters);
         }
 
         public Booking GetBookingById(int id)
         {
-            string queryString = @"SELECT Id, Time, UserId, Note FROM Bookings WHERE Id=@id";
+            string queryString = @"SELECT Id, Time, UserId, Note FROM Booking WHERE Id=@id";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("Id", id);
 
-            return GetBookings(queryString, parameters).FirstOrDefault();
+            return GetBooking(queryString, parameters).FirstOrDefault();
         }
 
         public Booking CreateBooking(DateTime starttime, DateTime endtime, int userid, string note)
@@ -63,7 +63,7 @@ namespace Lib.Managers
             Booking result;
             int createdId = -1;
 
-            string queryString = "IF NOT EXISTS(SELECT Id FROM Bookings WHERE Time >= @starttime AND Time < @endtime AND Deleted = 0) BEGIN ";
+            string queryString = "IF NOT EXISTS(SELECT Id FROM Booking WHERE Time >= @starttime AND Time < @endtime AND Deleted = 0) BEGIN ";
             int counter = 1;
             DateTime low = starttime;
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -75,7 +75,7 @@ namespace Lib.Managers
                 parameters.Add("time" + counter, low);
                 parameters.Add("user" + counter, userid);
 
-                queryString += "INSERT INTO Bookings (Time, UserId, Note) VALUES( @time" + counter + ", @user" + counter + ", @note) ";
+                queryString += "INSERT INTO Booking (Time, UserId, Note) VALUES( @time" + counter + ", @user" + counter + ", @note) ";
 
                 low = low.AddHours(2);
                 counter++;
@@ -83,7 +83,9 @@ namespace Lib.Managers
             queryString += " END";
             try
             {
-                createdId = CreateDeleteBooking(queryString, parameters);
+                //TODO, fix return value.
+                createdId = 1;
+                CreateDeleteBooking(queryString, parameters);
             }
             catch (Exception ex)
             {
@@ -103,7 +105,7 @@ namespace Lib.Managers
             parameters.Add("endtime", endtime);
             parameters.Add("user", userid);
 
-            string queryString = "UPDATE Bookings SET Deleted = 1 WHERE Time >= @starttime AND Time < @endtime AND UserId = @user";
+            string queryString = "UPDATE Booking SET Deleted = 1 WHERE Time >= @starttime AND Time < @endtime AND UserId = @user";
 
             try
             {
@@ -122,7 +124,7 @@ namespace Lib.Managers
         #region private methods
 
 
-        private List<Booking> GetBookings(string queryString, Dictionary<string, object> parameters)
+        private List<Booking> GetBooking(string queryString, Dictionary<string, object> parameters)
         {
             List<Booking> result = new List<Booking>();
             string qString = queryString;

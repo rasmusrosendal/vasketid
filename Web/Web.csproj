@@ -101,7 +101,9 @@
     </Content>
     <Content Include="pages\Basepage.aspx" />
     <Content Include="SiteMaster.Master" />
+    <None Include="Properties\PublishProfiles\Vasketid %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\Vasketid.pubxml" />
+    <None Include="Properties\PublishProfiles\Vasketid2.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

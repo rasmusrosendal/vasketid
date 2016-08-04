@@ -29,7 +29,7 @@ namespace Lib.Managers
         #region public methods
         public User ValidateLogin(string userName, string password)
         {
-            string queryString = @"SELECT * FROM Resident WHERE Name=@name AND Deleted=@deleted";
+            string queryString = @"SELECT * FROM [User] WHERE Name=@name AND Deleted=@deleted";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("name", userName);
             parameters.Add("deleted", false);
@@ -48,7 +48,7 @@ namespace Lib.Managers
 
         public bool IsUsernameTaken(string username)
         {
-            string querystring = "SELECT TOP 1 * FROM Resident WHERE Name = @name AND Deleted=@deleted";
+            string querystring = "SELECT TOP 1 * FROM [User] WHERE Name = @name AND Deleted=@deleted";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("name", username);
             parameters.Add("deleted", false);
@@ -59,7 +59,7 @@ namespace Lib.Managers
 
         public User GetUserById(int id)
         {
-            string queryString = @"SELECT * FROM Resident WHERE Id=@id";
+            string queryString = @"SELECT * FROM [User] WHERE Id=@id";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
 
@@ -68,7 +68,7 @@ namespace Lib.Managers
 
         public User GetUserByName(string name)
         {
-            string queryString = @"SELECT * FROM Resident WHERE Name=@name";
+            string queryString = @"SELECT * FROM [User] WHERE Name=@name";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("name", name);
 
@@ -77,7 +77,7 @@ namespace Lib.Managers
 
         public List<User> GetAllUsers()
         {
-            string queryString = @"SELECT * FROM Resident WHERE Deleted = @deleted";
+            string queryString = @"SELECT * FROM [User] WHERE Deleted = @deleted";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("deleted", 0);
 
@@ -89,7 +89,7 @@ namespace Lib.Managers
             User result;
             Guid guid = Guid.NewGuid();
             string hashedPassword = HashSHA1(password + guid);
-            string queryString = "INSERT INTO Resident (Name, Password, Guid, IsAdmin) VALUES (@name, @password, @guid, @isAdmin)";
+            string queryString = "INSERT INTO [User] (Name, Password, Guid, IsAdmin) VALUES (@name, @password, @guid, @isAdmin)";
 
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("name", name);
@@ -113,7 +113,7 @@ namespace Lib.Managers
         public bool UpdateUser(User user)
         {
             bool result = true;
-            string queryString = "UPDATE Resident SET Name = @name, IsAdmin = @isAdmin, Deleted = @deleted WHERE Id = @id";
+            string queryString = "UPDATE [User] SET Name = @name, IsAdmin = @isAdmin, Deleted = @deleted WHERE Id = @id";
 
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", user.Id);
@@ -161,6 +161,7 @@ namespace Lib.Managers
                         user.Password = (string)reader[2];
                         user.Guid = (Guid)reader[3];
                         user.IsAdmin = (bool)reader[4];
+                        var temp = reader[5];
                         user.Deleted = (bool)reader[5];
                     }
                     result = user;
