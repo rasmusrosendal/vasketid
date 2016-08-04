@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib", "Lib\Lib.csproj", "{7175D40F-21F5-4697-AA35-45B2435CB319}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{4F7C1311-8C40-4477-ACEB-CA1D74214059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMigrationHelper", "DataMigrationHelper\DataMigrationHelper.csproj", "{BDE23250-D5FE-4870-A7D4-7F4451C7CBF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7175D40F-21F5-4697-AA35-45B2435CB319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7175D40F-21F5-4697-AA35-45B2435CB319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7175D40F-21F5-4697-AA35-45B2435CB319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7175D40F-21F5-4697-AA35-45B2435CB319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F7C1311-8C40-4477-ACEB-CA1D74214059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F7C1311-8C40-4477-ACEB-CA1D74214059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F7C1311-8C40-4477-ACEB-CA1D74214059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F7C1311-8C40-4477-ACEB-CA1D74214059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE23250-D5FE-4870-A7D4-7F4451C7CBF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE23250-D5FE-4870-A7D4-7F4451C7CBF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE23250-D5FE-4870-A7D4-7F4451C7CBF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE23250-D5FE-4870-A7D4-7F4451C7CBF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

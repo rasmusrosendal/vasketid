@@ -1,0 +1,4 @@
+C:\Projects\Visual Studio\Vasketider\Lib\bin\Release\Lib.dll
+C:\Projects\Visual Studio\Vasketider\Lib\bin\Release\Lib.pdb
+C:\Projects\Visual Studio\Vasketider\Lib\obj\Release\Lib.dll
+C:\Projects\Visual Studio\Vasketider\Lib\obj\Release\Lib.pdb

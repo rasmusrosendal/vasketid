@@ -1,0 +1,5 @@
+C:\Projects\Visual Studio\Vasketider\Lib\bin\Debug\Lib.dll
+C:\Projects\Visual Studio\Vasketider\Lib\bin\Debug\Lib.pdb
+C:\Projects\Visual Studio\Vasketider\Lib\obj\Debug\Lib.csprojResolveAssemblyReference.cache
+C:\Projects\Visual Studio\Vasketider\Lib\obj\Debug\Lib.dll
+C:\Projects\Visual Studio\Vasketider\Lib\obj\Debug\Lib.pdb
